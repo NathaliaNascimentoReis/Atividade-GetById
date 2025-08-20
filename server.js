@@ -42,3 +42,16 @@ app.get("/bruxos/nome/:nome", (req, res) => {
         })
     }
 })
+
+app.get("/bruxos/casa/:casa", (req, res) => {
+    let casa = req.params.casa;
+    const casaDeHogwarts = bruxos.filter(b => b.casa.toLowerCase().includes(casa.toLowerCase()));
+
+    if (casaDeHogwarts.length > 0) {
+        res.status(200).json(casaDeHogwarts);
+    } else {
+        res.status(404).json({
+            mensagem: "Esta casa não existe"
+        })
+    }
+})
