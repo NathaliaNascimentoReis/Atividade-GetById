@@ -41,7 +41,7 @@ export default [
     },
     {
         id: 5,
-        nome: "Rony",
+        nome: "Ron Weasley",
         casa: "Grifnória",
         ano: 7,
         varinha: "madeira de salgueiro e continha o núcleo de fio de cauda de unicórnio, 30cm",
