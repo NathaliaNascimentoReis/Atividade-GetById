@@ -1,0 +1,31 @@
+{
+  "name": "getbyid",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "cls && nodemon server.js"
+  },
+  "keywords": [
+    "Senai",
+    "Desenvolvimento de Sistemas",
+    "Backend",
+    "TI",
+    "nodemon",
+    "express",
+    "JavaScript",
+    "json",
+    "npm",
+    "GET",
+    "localhost"
+  ],
+  "author": "Nat",
+  "license": "MIT",
+  "description": "Criar um servidor Node.js com Express para exibir uma lista de bruxos do universo Harry Potter.",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
