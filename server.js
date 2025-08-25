@@ -4,7 +4,7 @@ import dados from "./src/data/dados.js"
 const app = express();
 const serverPort = 3000;
 
-const {bruxos, casas, varinhas, pocoes} = dados;
+const {bruxos, casas, varinhas, pocoes, animais} = dados;
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -72,6 +72,29 @@ app.get("/casas/id/:id", (req, res) => {
     } else {
         res.status(404).json({
             mensagem: "Esta casa não existe"
+        })
+    }
+})
+app.get("/animais", (req, res) => {
+    if (animais.length > 0) {
+        res.status(200).json(animais);
+    } else {
+        res.status(404).json({
+            mensagem: "Não existem animais"
+        })
+    }
+});
+
+app.get("/animais/id/:id", (req, res) => {
+    let id = req.params.id;
+    id = parseInt(id);
+    const animal = animais.find(b => b.id === id);
+
+    if (animal) {
+        res.status(200).json(animal);
+    } else {
+        res.status(404).json({
+            mensagem: "Este animal não existe"
         })
     }
 })

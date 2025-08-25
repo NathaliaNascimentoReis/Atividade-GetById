@@ -285,4 +285,41 @@ let pocoes = [
     }
 ];
 
-export default {bruxos, casas, varinhas, pocoes};
+let animais = [{
+    id: 1,
+    nome: "Coruja",
+    tipo: "Correio/Companhia"
+},
+{
+    id: 2,
+    nome: "Gato",
+    tipo: "Companhia"
+},
+{
+    id: 3,
+    nome: "Sapo",
+    tipo: "Companhia"
+},
+{
+    id: 4,
+    nome: "Rato",
+    tipo: "Companhia"
+},
+{
+    id: 5,
+    nome: "Cão de três cabeças",
+    tipo: "Guardião"
+},
+{
+    id: 6,
+    nome: "Fênix",
+    tipo: "Companhia/Guardião"
+},
+{
+    id: 7,
+    nome: "Hipogrifo",
+    tipo: "Companhia/Transporte"
+}
+];
+
+export default {bruxos, casas, varinhas, pocoes, animais};
