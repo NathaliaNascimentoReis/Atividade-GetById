@@ -1,8 +1,11 @@
 import express from "express";
-import bruxos from "./src/data/bruxos.js"
+import dados from "./src/data/dados.js"
 
 const app = express();
 const serverPort = 3000;
+
+const {bruxos, casas, varinhas, pocoes} = dados;
+app.use(express.json());
 
 app.get("/", (req, res) => {
     res.send(`Entrando no mundo de Harry Potter!`)
@@ -16,7 +19,7 @@ app.listen(serverPort, () => {
     console.log(`Seja bem-vindo ao mundo de Harry Potter em http://localhost:${serverPort} ! Prepare sua varinha 🧙!`);
 })
 
-app.get("/bruxos/:id", (req, res) => {
+app.get("/bruxos/id/:id", (req, res) => {
     let id = req.params.id;
     id = parseInt(id);
     const bruxo = bruxos.find(b => b.id === id);
@@ -43,15 +46,14 @@ app.get("/bruxos/nome/:nome", (req, res) => {
     }
 })
 
-app.get("/bruxos/casa/:casa", (req, res) => {
-    let casa = req.params.casa;
-    const casaDeHogwarts = bruxos.filter(b => b.casa.toLowerCase().includes(casa.toLowerCase()));
+app.get("/casas", (req, res) => {
+    res.json(casas);
+});
 
-    if (casaDeHogwarts.length > 0) {
-        res.status(200).json(casaDeHogwarts);
-    } else {
-        res.status(404).json({
-            mensagem: "Esta casa não existe"
-        })
-    }
+app.get("/varinhas", (req, res) => {
+    res.json(varinhas);
+});
+
+app.get("/pocoes", (req, res) => {
+    res.json(pocoes);
 })

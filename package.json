@@ -1,5 +1,5 @@
 {
-  "name": "getbyid",
+  "name": "harrypotter",
   "version": "1.0.0",
   "main": "server.js",
   "type": "module",
@@ -23,7 +23,7 @@
   ],
   "author": "Nat",
   "license": "MIT",
-  "description": "Criar um servidor Node.js com Express para exibir uma lista de bruxos do universo Harry Potter.",
+  "description": "Atividade de Webservice",
   "dependencies": {
     "express": "^5.1.0",
     "nodemon": "^3.1.10"
