@@ -62,6 +62,20 @@ app.get("/casas", (req, res) => {
     }
 });
 
+app.get("/casas/id/:id", (req, res) => {
+    let id = req.params.id;
+    id = parseInt(id);
+    const casa = casas.find(b => b.id === id);
+
+    if (casa) {
+        res.status(200).json(casa);
+    } else {
+        res.status(404).json({
+            mensagem: "Esta casa não existe"
+        })
+    }
+})
+
 app.get("/varinhas", (req, res) => {
     if (varinhas.length > 0) {
         res.status(200).json(varinhas);
@@ -72,12 +86,40 @@ app.get("/varinhas", (req, res) => {
     }
 });
 
+app.get("/varinhas/id/:id", (req, res) => {
+    let id = req.params.id;
+    id = parseInt(id);
+    const varinha = varinhas.find(b => b.id === id);
+
+    if (varinha) {
+        res.status(200).json(varinha);
+    } else {
+        res.status(404).json({
+            mensagem: "Esta varinha não existe"
+        })
+    }
+});
+
 app.get("/pocoes", (req, res) => {
     if (pocoes.length > 0) {
         res.status(200).json(pocoes)
     } else {
         res.status(404).json({
             mensagem: "Não existem poções"
+        })
+    }
+});
+
+app.get("/pocoes/id/:id", (req, res) => {
+    let id = req.params.id;
+    id = parseInt(id);
+    const pocao = pocoes.find(b => b.id === id);
+
+    if (pocao) {
+        res.status(200).json(pocao);
+    } else {
+        res.status(404).json({
+            mensagem: "Esta poção não existe"
         })
     }
 })
