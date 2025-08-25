@@ -12,7 +12,13 @@ app.get("/", (req, res) => {
 })
 
 app.get(`/bruxos`, (req, res) => {
-    res.json(bruxos);
+    if (bruxos.length > 0) {
+        res.status(200).json(bruxos)
+    } else {
+        res.status(404).json({
+            mensagem: "Não existem bruxos"
+        })
+    }
 })
 
 app.listen(serverPort, () => {
@@ -47,13 +53,31 @@ app.get("/bruxos/nome/:nome", (req, res) => {
 })
 
 app.get("/casas", (req, res) => {
-    res.json(casas);
+    if (casas.length > 0) {
+        res.status(200).json(casas);
+    } else {
+        res.status(404).json({
+            mensagem: "Não existem casas"
+        })
+    }
 });
 
 app.get("/varinhas", (req, res) => {
-    res.json(varinhas);
+    if (varinhas.length > 0) {
+        res.status(200).json(varinhas);
+    } else {
+        res.status(404).json({
+            mensagem: "Não existem varinhas"
+        })
+    }
 });
 
 app.get("/pocoes", (req, res) => {
-    res.json(pocoes);
+    if (pocoes.length > 0) {
+        res.status(200).json(pocoes)
+    } else {
+        res.status(404).json({
+            mensagem: "Não existem poções"
+        })
+    }
 })
